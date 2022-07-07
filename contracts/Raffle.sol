@@ -15,7 +15,7 @@ error Raffle_UpKeedNotNeeded(
     uint256 raffleState
 );
 
-abstract contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
+contract Raffle is VRFConsumerBaseV2, KeeperCompatibleInterface {
     enum RaffleState {
         OPEN,
         CALCULATING
