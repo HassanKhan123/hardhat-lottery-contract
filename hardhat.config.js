@@ -1,4 +1,8 @@
-const { RINKEBY_RPC_URL, PRIVATE_KEY } = require("./secret");
+const {
+  RINKEBY_RPC_URL,
+  PRIVATE_KEY,
+  COINMARKET_API_KEY,
+} = require("./secret");
 
 require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
@@ -22,6 +26,14 @@ module.exports = {
       chainId: 4,
       blockConfirmations: 6,
     },
+  },
+  gasReporter: {
+    enabled: false,
+    outputFile: "gas-report.txt",
+    noColors: true,
+    currency: "USD",
+    coinmarketcap: COINMARKET_API_KEY,
+    token: "ETH",
   },
   namedAccounts: {
     deployer: {
