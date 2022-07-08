@@ -2,6 +2,7 @@ const {
   RINKEBY_RPC_URL,
   PRIVATE_KEY,
   COINMARKET_API_KEY,
+  ETHERSCAN_API_KEY,
 } = require("./secret");
 
 require("@nomiclabs/hardhat-waffle");
@@ -26,6 +27,9 @@ module.exports = {
       chainId: 4,
       blockConfirmations: 6,
     },
+  },
+  etherscan: {
+    apiKey: ETHERSCAN_API_KEY,
   },
   gasReporter: {
     enabled: false,
